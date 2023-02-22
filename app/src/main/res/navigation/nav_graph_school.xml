@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_school"
+    app:startDestination="@id/SchoolListFragment">
+
+    <fragment
+        android:id="@+id/SchoolListFragment"
+        android:name="com.example.nyc_school.presentation.view.SchoolListFragment"
+        android:label="@string/school_list_fragment_label"
+        tools:layout="@layout/fragment_school_list">
+
+        <action
+            android:id="@+id/action_SchoolListFragment_to_SchoolSatFragment"
+            app:destination="@id/SchoolSatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SchoolSatFragment"
+        android:name="com.example.nyc_school.presentation.view.SchoolSatFragment"
+        android:label="@string/school_sat_fragment_label"
+        tools:layout="@layout/fragment_school_sat">
+
+        <action
+            android:id="@+id/action_SchoolSatFragment_to_SchoolListFragment"
+            app:destination="@id/SchoolListFragment" />
+        <argument
+            android:name="schoolDbn"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+</navigation>
